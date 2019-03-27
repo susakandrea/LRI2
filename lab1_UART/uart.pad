@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Mar 21 10:37:50 2019
+Wed Mar 27 12:04:11 2019
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -9,8 +9,8 @@ Thu Mar 21 10:37:50 2019
 # character is used as the data field separator. This file is also designed
 # to support parsing.
 #
-INPUT FILE:       UART_full_map.ncd
-OUTPUT FILE:      UART_full.pad
+INPUT FILE:       uart_map.ncd
+OUTPUT FILE:      uart.pad
 PART TYPE:        xc6slx45
 SPEED GRADE:      -2
 PACKAGE:          fgg676
@@ -38,8 +38,8 @@ A16||IOBS|IO_L38N_VREF_0|UNUSED||0|||||||||
 A17||IOBS|IO_L50N_0|UNUSED||0|||||||||
 A18||IOBS|IO_L62N_VREF_0|UNUSED||0|||||||||
 A19||IOBS|IO_L63N_SCP6_0|UNUSED||0|||||||||
-A20|tx_out|IOB|IO_L64N_SCP4_0|OUTPUT|LVCMOS25*|0|12|SLOW||||LOCATED|NO|NONE|
-A21|rx|IOB|IO_L65N_SCP2_0|INPUT|LVCMOS25*|0||||NONE||LOCATED|NO|NONE|
+A20|tx|IOB|IO_L64N_SCP4_0|OUTPUT|LVCMOS33|0|12|SLOW||||LOCATED|NO|NONE|
+A21|rx|IOB|IO_L65N_SCP2_0|INPUT|LVCMOS33|0||||NONE||LOCATED|NO|NONE|
 A22||IOBS|IO_L66N_SCP0_0|UNUSED||0|||||||||
 A23||IOBS|IO_L1N_A24_VREF_1|UNUSED||1|||||||||
 A24|||TDO||||||||||||
@@ -144,7 +144,7 @@ AD18|r_data<5>|IOB|IO_L9P_2|OUTPUT|LVCMOS25*|2|12|SLOW||||UNLOCATED|NO|NONE|
 AD19|r_data<2>|IOB|IO_L7N_2|OUTPUT|LVCMOS25*|2|12|SLOW||||UNLOCATED|NO|NONE|
 AD20|w_data<1>|IOB|IO_L3P_D0_DIN_MISO_MISO1_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
 AD21|w_data<6>|IOB|IO_L5N_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
-AD22|wr_uart|IOB|IO_L1P_CCLK_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
+AD22|tx_full|IOB|IO_L1P_CCLK_2|OUTPUT|LVCMOS25*|2|12|SLOW||||UNLOCATED|NO|NONE|
 AD23|||SUSPEND||||||||||||
 AD24||IOBM|IO_L48P_HDC_M1DQ8_1|UNUSED||1|||||||||
 AD25|||VCCO_1|||1|||||any******||||
@@ -196,30 +196,30 @@ AF18|rd_uart|IOB|IO_L9N_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
 AF19|w_data<4>|IOB|IO_L4N_VREF_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
 AF20|w_data<2>|IOB|IO_L3N_MOSI_CSI_B_MISO0_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
 AF21|w_data<0>|IOB|IO_L2N_CMPMOSI_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
-AF22|tx_full|IOB|IO_L1N_M0_CMPMISO_2|OUTPUT|LVCMOS25*|2|12|SLOW||||UNLOCATED|NO|NONE|
+AF22|wr_uart|IOB|IO_L1N_M0_CMPMISO_2|INPUT|LVCMOS25*|2||||NONE||UNLOCATED|NO|NONE|
 AF23|||DONE_2||||||||||||
 AF24||IOBS|IO_L74N_DOUT_BUSY_1|UNUSED||1|||||||||
 AF25||IOBS|IO_L67N_1|UNUSED||1|||||||||
 AF26|||GND||||||||||||
 B1||IOBS|IO_L81N_3|UNUSED||3|||||||||
 B2||IOBM|IO_L81P_3|UNUSED||3|||||||||
-B3|||VCCO_0|||0|||||2.50||||
+B3|||VCCO_0|||0|||||3.30||||
 B4||IOBM|IO_L2P_0|UNUSED||0|||||||||
 B5|||GND||||||||||||
 B6||IOBM|IO_L6P_0|UNUSED||0|||||||||
-B7|||VCCO_0|||0|||||2.50||||
+B7|||VCCO_0|||0|||||3.30||||
 B8||IOBM|IO_L16P_0|UNUSED||0|||||||||
 B9|||GND||||||||||||
 B10|||NC||||||||||||
-B11|||VCCO_0|||0|||||2.50||||
+B11|||VCCO_0|||0|||||3.30||||
 B12||IOBM|IO_L26P_0|UNUSED||0|||||||||
 B13|||GND||||||||||||
 B14||IOBM|IO_L35P_GCLK17_0|UNUSED||0|||||||||
-B15|||VCCO_0|||0|||||2.50||||
+B15|||VCCO_0|||0|||||3.30||||
 B16||IOBM|IO_L38P_0|UNUSED||0|||||||||
 B17|||GND||||||||||||
 B18||IOBM|IO_L62P_0|UNUSED||0|||||||||
-B19|||VCCO_0|||0|||||2.50||||
+B19|||VCCO_0|||0|||||3.30||||
 B20||IOBM|IO_L64P_SCP5_0|UNUSED||0|||||||||
 B21|||GND||||||||||||
 B22||IOBM|IO_L66P_SCP1_0|UNUSED||0|||||||||
@@ -248,7 +248,7 @@ C18||IOBS|IO_L52N_0|UNUSED||0|||||||||
 C19||IOBM|IO_L63P_SCP7_0|UNUSED||0|||||||||
 C20||IOBS|IO_L56N_0|UNUSED||0|||||||||
 C21||IOBM|IO_L65P_SCP3_0|UNUSED||0|||||||||
-C22|||VCCO_0|||0|||||2.50||||
+C22|||VCCO_0|||0|||||3.30||||
 C23|||TMS||||||||||||
 C24|||NC||||||||||||
 C25||IOBM|IO_L11P_1|UNUSED||1|||||||||
@@ -261,7 +261,7 @@ D5|||NC||||||||||||
 D6||IOBM|IO_L8P_0|UNUSED||0|||||||||
 D7|||NC||||||||||||
 D8|||NC||||||||||||
-D9|||VCCO_0|||0|||||2.50||||
+D9|||VCCO_0|||0|||||3.30||||
 D10|||NC||||||||||||
 D11|||NC||||||||||||
 D12|||NC||||||||||||
@@ -269,7 +269,7 @@ D13|||NC||||||||||||
 D14||IOBM|IO_L36P_GCLK15_0|UNUSED||0|||||||||
 D15|||NC||||||||||||
 D16|||NC||||||||||||
-D17|||VCCO_0|||0|||||2.50||||
+D17|||VCCO_0|||0|||||3.30||||
 D18||IOBM|IO_L52P_0|UNUSED||0|||||||||
 D19|||NC||||||||||||
 D20|||NC||||||||||||
@@ -291,7 +291,7 @@ E9|||NC||||||||||||
 E10|||NC||||||||||||
 E11|||GND||||||||||||
 E12|||NC||||||||||||
-E13|||VCCO_0|||0|||||2.50||||
+E13|||VCCO_0|||0|||||3.30||||
 E14|||NC||||||||||||
 E15|||GND||||||||||||
 E16|||NC||||||||||||
@@ -340,7 +340,7 @@ G6|||NC||||||||||||
 G7|||NC||||||||||||
 G8|||NC||||||||||||
 G9|||NC||||||||||||
-G10|||VCCO_0|||0|||||2.50||||
+G10|||VCCO_0|||0|||||3.30||||
 G11|||NC||||||||||||
 G12|||VCCAUX||||||||2.5||||
 G13|||NC||||||||||||
@@ -348,7 +348,7 @@ G14|||NC||||||||||||
 G15|||VCCAUX||||||||2.5||||
 G16|||NC||||||||||||
 G17|||NC||||||||||||
-G18|||VCCO_0|||0|||||2.50||||
+G18|||VCCO_0|||0|||||3.30||||
 G19|||NC||||||||||||
 G20|||NC||||||||||||
 G21|||NC||||||||||||
@@ -370,7 +370,7 @@ H10|||NC||||||||||||
 H11|||GND||||||||||||
 H12|||NC||||||||||||
 H13|||NC||||||||||||
-H14|||VCCO_0|||0|||||2.50||||
+H14|||VCCO_0|||0|||||3.30||||
 H15|||NC||||||||||||
 H16|||NC||||||||||||
 H17|||NC||||||||||||

@@ -31,23 +31,23 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity UART_reciever is
+entity uart_rx is
 
 generic(
-			data_bit : integer := 8;
-			tick : integer := 16
+			DBIT : integer := 8;
+			SB_TICK: integer := 16
 			);
 port(
 		clk, reset : in std_logic;
 		rx : in std_logic;
 		s_tick : in std_logic;
-		rx_done : out std_logic;
-		data_out : out std_logic_vector(7 downto 0)
+		rx_done_tick : out std_logic;
+		dout : out std_logic_vector(7 downto 0)
 		);
 		
-end UART_reciever;
+end uart_rx;
 
-architecture Behavioral of UART_reciever is
+architecture Behavioral of uart_rx is
 
 type state_type is (idle, start, data, stop); --stanja FSM
 signal state_reg, state_next : state_type;
@@ -78,7 +78,7 @@ begin
 		s_next <= s_reg;
 		n_next <= n_reg;
 		b_next <= b_reg;
-		rx_done <= '0';
+		rx_done_tick <= '0';
 		
 		case state_reg is
 			
@@ -104,7 +104,7 @@ begin
 					if s_reg = 15 then
 						s_next <= "0000";
 						b_next <= rx & b_reg(7 downto 1);
-						if (n_reg = (data_bit-1)) then
+						if (n_reg = (DBIT-1)) then
 							state_next <= stop;
 						else
 							n_next <= n_reg + 1;
@@ -116,16 +116,16 @@ begin
 				
 			when stop =>
 				if(s_tick = '1') then
-					if s_reg = (tick - 1) then
+					if s_reg = (SB_TICK - 1) then
 						state_next <= idle;
-						rx_done <= '1';
+						rx_done_tick <= '1';
 					else
 						s_next <= s_reg + 1;
 					end if;
 				end if;
 		end case;
 	end process;	
-data_out <= b_reg;
+dout <= b_reg;
 
 end Behavioral;
 

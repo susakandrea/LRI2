@@ -31,23 +31,23 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity UART_transmitter is
+entity uart_tx is
 generic(
-			data_bit : integer := 8;
-			tick : integer := 16
+			DBIT : integer := 8;
+			SB_TICK : integer := 16
 			);
 port(
 		clk, reset : in std_logic;
-		tx : in std_logic;
+		tx_start : in std_logic;
 		s_tick : in std_logic;
 		din : in std_logic_vector(7 downto 0);
-		tx_done : out std_logic;
-		tx_out : out std_logic
+		tx_done_tick : out std_logic;
+		tx : out std_logic
 		);
 		
-end UART_transmitter;
+end uart_tx;
 
-architecture Behavioral of UART_transmitter is
+architecture Behavioral of uart_tx is
 
 type state_type is (idle, start, data, stop); --stanja FSM
 signal state_reg, state_next : state_type;
@@ -58,7 +58,7 @@ signal tx_reg, tx_next : std_logic;
 
 begin
 
-	process(clk, reset, tx_next)
+	process(clk, reset)
 	begin
 		if(reset = '1') then
 			state_reg <= idle;
@@ -76,27 +76,27 @@ begin
 		end if;
 	end process;
 	
-	process(state_reg, s_reg, n_reg, b_reg, s_tick, tx_reg, tx, din)
+	process(state_reg, s_reg, n_reg, b_reg, s_tick, tx_reg, tx_start, din)
 	begin
 		state_next <= state_reg;
 		s_next <= s_reg;
 		n_next <= n_reg;
 		b_next <= b_reg;
 		tx_next <= tx_reg;
-		tx_done <= '0';
+		tx_done_tick <= '0';
 		
 		case state_reg is
 			
 			when idle =>
 				tx_next <= '1';
-				if(tx = '1') then
+				if(tx_start = '1') then
 					state_next <= start;
 					s_next <= "0000";
 					b_next <= din;
 				end if;
 			
 			when start =>
-				tx_next <= '1';
+				tx_next <= '0';
 				if(s_tick = '1') then
 					if(s_reg = 15) then
 						state_next <= data;
@@ -113,7 +113,7 @@ begin
 					if s_reg = 15 then
 						s_next <= "0000";
 						b_next <= '0' & b_reg(7 downto 1);
-						if (n_reg = (data_bit-1)) then
+						if (n_reg = (DBIT-1)) then
 							state_next <= stop;
 						else
 							n_next <= n_reg + 1;
@@ -126,18 +126,18 @@ begin
 			when stop =>
 				tx_next <= '1';
 				if(s_tick = '1') then
-					if s_reg = (tick - 1) then
+					if s_reg = (SB_TICK- 1) then
 						state_next <= idle;
-						tx_done <= '1';
+						tx_done_tick <= '1';
 					else
 						s_next <= s_reg + 1;
 					end if;
 				end if;
-			when others =>
+			--when others =>
 		end case;
 	end process;
 
-tx_out <= tx_reg;
+tx <= tx_reg;
 
 end Behavioral;
 
