@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/LRI2/lab1_UART/UART_full_isim_beh.exe" -prj "D:/LRI2/lab1_UART/UART_full_beh.prj" "work.UART_full" 

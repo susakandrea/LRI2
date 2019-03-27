@@ -1,0 +1,1 @@
+vhdtdtfi -prj lab1_UART -o D:/LRI2/lab1_UART/fifo.vhi -module fifo -template D:/XILINX/14.7/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work fifo.vhd 

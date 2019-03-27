@@ -1,0 +1,82 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Mar 21 10:37:29 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "M21" LEVEL 1;
+COMP "tx_out" LOCATE = SITE "A20" LEVEL 1;
+COMP "rx" LOCATE = SITE "A21" LEVEL 1;
+COMP "reset" LOCATE = SITE "AB24" LEVEL 1;
+PIN reset_pin<0> = BEL "reset" PINNAME PAD;
+PIN "reset_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP sys_clk_pin = BEL "baud_gen_unit/r_reg_0" BEL "baud_gen_unit/r_reg_1"
+        BEL "baud_gen_unit/r_reg_2" BEL "baud_gen_unit/r_reg_3" BEL
+        "baud_gen_unit/r_reg_4" BEL "baud_gen_unit/r_reg_5" BEL
+        "baud_gen_unit/r_reg_6" BEL "baud_gen_unit/r_reg_7" BEL
+        "fifo_rx_unit/w_ptr_reg_1" BEL "fifo_rx_unit/w_ptr_reg_0" BEL
+        "fifo_rx_unit/array_reg_3_7" BEL "fifo_rx_unit/array_reg_3_6" BEL
+        "fifo_rx_unit/array_reg_3_5" BEL "fifo_rx_unit/array_reg_3_4" BEL
+        "fifo_rx_unit/array_reg_3_3" BEL "fifo_rx_unit/array_reg_3_2" BEL
+        "fifo_rx_unit/array_reg_3_1" BEL "fifo_rx_unit/array_reg_3_0" BEL
+        "fifo_rx_unit/array_reg_0_7" BEL "fifo_rx_unit/array_reg_0_6" BEL
+        "fifo_rx_unit/array_reg_0_5" BEL "fifo_rx_unit/array_reg_0_4" BEL
+        "fifo_rx_unit/array_reg_0_3" BEL "fifo_rx_unit/array_reg_0_2" BEL
+        "fifo_rx_unit/array_reg_0_1" BEL "fifo_rx_unit/array_reg_0_0" BEL
+        "fifo_rx_unit/array_reg_1_7" BEL "fifo_rx_unit/array_reg_1_6" BEL
+        "fifo_rx_unit/array_reg_1_5" BEL "fifo_rx_unit/array_reg_1_4" BEL
+        "fifo_rx_unit/array_reg_1_3" BEL "fifo_rx_unit/array_reg_1_2" BEL
+        "fifo_rx_unit/array_reg_1_1" BEL "fifo_rx_unit/array_reg_1_0" BEL
+        "fifo_rx_unit/array_reg_2_7" BEL "fifo_rx_unit/array_reg_2_6" BEL
+        "fifo_rx_unit/array_reg_2_5" BEL "fifo_rx_unit/array_reg_2_4" BEL
+        "fifo_rx_unit/array_reg_2_3" BEL "fifo_rx_unit/array_reg_2_2" BEL
+        "fifo_rx_unit/array_reg_2_1" BEL "fifo_rx_unit/array_reg_2_0" BEL
+        "fifo_tx_unit/array_reg_3_7" BEL "fifo_tx_unit/array_reg_3_6" BEL
+        "fifo_tx_unit/array_reg_3_5" BEL "fifo_tx_unit/array_reg_3_4" BEL
+        "fifo_tx_unit/array_reg_3_3" BEL "fifo_tx_unit/array_reg_3_2" BEL
+        "fifo_tx_unit/array_reg_3_1" BEL "fifo_tx_unit/array_reg_3_0" BEL
+        "fifo_tx_unit/array_reg_0_7" BEL "fifo_tx_unit/array_reg_0_6" BEL
+        "fifo_tx_unit/array_reg_0_5" BEL "fifo_tx_unit/array_reg_0_4" BEL
+        "fifo_tx_unit/array_reg_0_3" BEL "fifo_tx_unit/array_reg_0_2" BEL
+        "fifo_tx_unit/array_reg_0_1" BEL "fifo_tx_unit/array_reg_0_0" BEL
+        "fifo_tx_unit/array_reg_1_7" BEL "fifo_tx_unit/array_reg_1_6" BEL
+        "fifo_tx_unit/array_reg_1_5" BEL "fifo_tx_unit/array_reg_1_4" BEL
+        "fifo_tx_unit/array_reg_1_3" BEL "fifo_tx_unit/array_reg_1_2" BEL
+        "fifo_tx_unit/array_reg_1_1" BEL "fifo_tx_unit/array_reg_1_0" BEL
+        "fifo_tx_unit/array_reg_2_7" BEL "fifo_tx_unit/array_reg_2_6" BEL
+        "fifo_tx_unit/array_reg_2_5" BEL "fifo_tx_unit/array_reg_2_4" BEL
+        "fifo_tx_unit/array_reg_2_3" BEL "fifo_tx_unit/array_reg_2_2" BEL
+        "fifo_tx_unit/array_reg_2_1" BEL "fifo_tx_unit/array_reg_2_0" BEL
+        "uart_rx_unit/state_reg_FSM_FFd1" BEL
+        "uart_rx_unit/state_reg_FSM_FFd2" BEL "uart_rx_unit/n_reg_2" BEL
+        "uart_rx_unit/n_reg_1" BEL "uart_rx_unit/n_reg_0" BEL
+        "uart_rx_unit/s_reg_3" BEL "uart_rx_unit/s_reg_2" BEL
+        "uart_rx_unit/s_reg_1" BEL "uart_rx_unit/s_reg_0" BEL
+        "uart_tx_unit/state_reg_FSM_FFd1" BEL
+        "uart_tx_unit/state_reg_FSM_FFd2" BEL "uart_tx_unit/n_reg_2" BEL
+        "uart_tx_unit/n_reg_1" BEL "uart_tx_unit/n_reg_0" BEL
+        "uart_tx_unit/s_reg_3" BEL "uart_tx_unit/s_reg_2" BEL
+        "uart_tx_unit/s_reg_1" BEL "uart_tx_unit/s_reg_0" BEL
+        "uart_tx_unit/tx_reg" BEL "fifo_tx_unit/full_reg" BEL
+        "fifo_tx_unit/empty_reg" BEL "fifo_rx_unit/r_ptr_reg_1" BEL
+        "fifo_rx_unit/r_ptr_reg_0" BEL "fifo_rx_unit/empty_reg" BEL
+        "fifo_rx_unit/full_reg" BEL "fifo_tx_unit/w_ptr_reg_1" BEL
+        "fifo_tx_unit/w_ptr_reg_0" BEL "fifo_tx_unit/r_ptr_reg_1" BEL
+        "fifo_tx_unit/r_ptr_reg_0" BEL "uart_rx_unit/b_reg_7" BEL
+        "uart_rx_unit/b_reg_6" BEL "uart_rx_unit/b_reg_5" BEL
+        "uart_rx_unit/b_reg_4" BEL "uart_rx_unit/b_reg_3" BEL
+        "uart_rx_unit/b_reg_2" BEL "uart_rx_unit/b_reg_1" BEL
+        "uart_rx_unit/b_reg_0" BEL "uart_tx_unit/b_reg_6" BEL
+        "uart_tx_unit/b_reg_5" BEL "uart_tx_unit/b_reg_4" BEL
+        "uart_tx_unit/b_reg_3" BEL "uart_tx_unit/b_reg_2" BEL
+        "uart_tx_unit/b_reg_1" BEL "uart_tx_unit/b_reg_0" BEL
+        "uart_tx_unit/b_reg_7" BEL "baud_gen_unit/r_reg_2_1" BEL
+        "uart_rx_unit/state_reg_FSM_FFd1_1" BEL
+        "uart_rx_unit/state_reg_FSM_FFd2_1" BEL "uart_rx_unit/s_reg_3_1" BEL
+        "baud_gen_unit/r_reg_3_1" BEL "baud_gen_unit/r_reg_5_1" BEL
+        "baud_gen_unit/r_reg_2_2" BEL "baud_gen_unit/r_reg_7_1" BEL
+        "baud_gen_unit/r_reg_3_2" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+PIN reset_pins<0> = BEL "reset" PINNAME PAD;
+PIN "reset_pins<0>" TIG;
+SCHEMATIC END;
+

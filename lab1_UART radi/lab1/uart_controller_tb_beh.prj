@@ -1,0 +1,5 @@
+vhdl work "transmitter.vhd"
+vhdl work "receiver.vhd"
+vhdl work "brg.vhd"
+vhdl work "uart_controller.vhd"
+vhdl work "uart_controller_tb.vhd"

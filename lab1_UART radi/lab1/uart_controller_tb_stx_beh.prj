@@ -1,0 +1,5 @@
+vhdl isim_temp "transmitter.vhd"
+vhdl isim_temp "receiver.vhd"
+vhdl isim_temp "brg.vhd"
+vhdl isim_temp "uart_controller.vhd"
+vhdl isim_temp "uart_controller_tb.vhd"

@@ -1,0 +1,5 @@
+vhdl isim_temp "UART_transmitter.vhd"
+vhdl isim_temp "UART_reciever.vhd"
+vhdl isim_temp "mod_m_counter.vhd"
+vhdl isim_temp "fifo.vhd"
+vhdl isim_temp "UART_full.vhd"

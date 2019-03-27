@@ -1,0 +1,20 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Mar 27 10:54:33 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "M21" LEVEL 1;
+COMP "rx" LOCATE = SITE "A21" LEVEL 1;
+COMP "tx" LOCATE = SITE "A20" LEVEL 1;
+COMP "rst" LOCATE = SITE "AB24" LEVEL 1;
+PIN rst_pin<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP sys_clk_pin = BEL "baud/counter_0" BEL "baud/tick_tmp" BEL
+        "baud/counter_2" BEL "baud/counter_1" BEL "baud/counter_5" BEL
+        "baud/counter_3" BEL "baud/counter_4" BEL "baud/counter_6" BEL
+        "baud/counter_7" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+PIN rst_pins<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pins<0>" TIG;
+SCHEMATIC END;
+

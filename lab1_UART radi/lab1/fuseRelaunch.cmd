@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller_tb_isim_beh.exe" -prj "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller_tb_beh.prj" "work.uart_controller_tb" 

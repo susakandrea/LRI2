@@ -1,0 +1,102 @@
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc const.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc const.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf const.ucf 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller_cs.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.xst" -ofn "C:/Users/Karlo/Desktop/lri2/lab1/uart_controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Nika/Downloads/lab1-final/lab1/uart_controller.xst" -ofn "C:/Users/Nika/Downloads/lab1-final/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Nika/Downloads/lab1-final/lab1/uart_controller.xst" -ofn "C:/Users/Nika/Downloads/lab1-final/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 
+xst -intstyle ise -ifn "G:/lab1-final/lab1/uart_controller.xst" -ofn "G:/lab1-final/lab1/uart_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc uart_controller.ucf -p xc6slx45-fgg676-2 uart_controller.ngc uart_controller.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_controller_map.ncd uart_controller.ngd uart_controller.pcf 
+par -w -intstyle ise -ol high -mt off uart_controller_map.ncd uart_controller.ncd uart_controller.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml uart_controller.twx uart_controller.ncd -o uart_controller.twr uart_controller.pcf -ucf uart_controller.ucf 
+bitgen -intstyle ise -f uart_controller.ut uart_controller.ncd 

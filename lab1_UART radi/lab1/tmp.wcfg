@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Karlo/Desktop/lri2/lab1/uart_controller_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="uart_controller_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/uart_controller_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/tx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/baud/tick" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tick</obj_property>
+      <obj_property name="ObjectShortName">tick</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/rec/rx_out" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_out</obj_property>
+      <obj_property name="ObjectShortName">rx_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/rec/d_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">d_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/trans/d_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">d_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/trans/tx_start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_start</obj_property>
+      <obj_property name="ObjectShortName">tx_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/rec/trenutno" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">trenutno</obj_property>
+      <obj_property name="ObjectShortName">trenutno</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/rec/sljedece" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">sljedece</obj_property>
+      <obj_property name="ObjectShortName">sljedece</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/trans/trenutno" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">trenutno</obj_property>
+      <obj_property name="ObjectShortName">trenutno</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_controller_tb/uut/trans/sljedece" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">sljedece</obj_property>
+      <obj_property name="ObjectShortName">sljedece</obj_property>
+   </wvobject>
+</wave_config>

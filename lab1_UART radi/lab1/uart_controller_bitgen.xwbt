@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=G:\lab1-final\lab1\uart_controller.ncd
+OUTFILE=G:\lab1-final\lab1\uart_controller.bit
+FAMILY=Spartan6
+PART=xc6slx45-2fgg676
+WORKINGDIR=G:\lab1-final\lab1
+LICENSE=ISE
+USER_INFO=174111888_174111889_210682969_921

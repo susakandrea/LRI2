@@ -1,0 +1,5 @@
+vhdl work "UART_transmitter.vhd"
+vhdl work "UART_reciever.vhd"
+vhdl work "mod_m_counter.vhd"
+vhdl work "fifo.vhd"
+vhdl work "UART_full.vhd"

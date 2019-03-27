@@ -1,0 +1,573 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.63 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.64 secs
+ 
+--> Reading design: uart_controller.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "uart_controller.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "uart_controller"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-fgg676
+
+---- Source Options
+Top Module Name                    : uart_controller
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "G:\lab1-final\lab1\transmitter.vhd" into library work
+Parsing entity <transmitter>.
+Parsing architecture <Behavioral> of entity <transmitter>.
+Parsing VHDL file "G:\lab1-final\lab1\receiver.vhd" into library work
+Parsing entity <receiver>.
+Parsing architecture <Behavioral> of entity <receiver>.
+Parsing VHDL file "G:\lab1-final\lab1\brg.vhd" into library work
+Parsing entity <brg>.
+Parsing architecture <Behavioral> of entity <brg>.
+Parsing VHDL file "G:\lab1-final\lab1\uart_controller.vhd" into library work
+Parsing entity <uart_controller>.
+Parsing architecture <Behavioral> of entity <uart_controller>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <uart_controller> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <transmitter> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "G:\lab1-final\lab1\transmitter.vhd" Line 102. Case statement is complete. others clause is never selected
+
+Elaborating entity <receiver> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "G:\lab1-final\lab1\receiver.vhd" Line 109. Case statement is complete. others clause is never selected
+
+Elaborating entity <brg> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uart_controller>.
+    Related source file is "G:\lab1-final\lab1\uart_controller.vhd".
+    Summary:
+	no macro.
+Unit <uart_controller> synthesized.
+
+Synthesizing Unit <transmitter>.
+    Related source file is "G:\lab1-final\lab1\transmitter.vhd".
+    Found 3-bit register for signal <trenutno>.
+    Found 3-bit register for signal <brojacPodataka>.
+    Found 4-bit register for signal <brojac>.
+    Found finite state machine <FSM_0> for signal <trenutno>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 5                                              |
+    | Clock              | tick (rising_edge)                             |
+    | Reset              | rst (negative)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <brojacPodataka[2]_GND_7_o_add_4_OUT> created at line 61.
+    Found 4-bit adder for signal <brojac[3]_GND_7_o_add_6_OUT> created at line 66.
+    Found 1-bit 8-to-1 multiplexer for signal <brojacPodataka[2]_d_in[7]_Mux_14_o> created at line 93.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   7 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <transmitter> synthesized.
+
+Synthesizing Unit <receiver>.
+    Related source file is "G:\lab1-final\lab1\receiver.vhd".
+    Found 2-bit register for signal <trenutno>.
+    Found 3-bit register for signal <brojacPodataka>.
+    Found 8-bit register for signal <d_out_reg>.
+    Found 4-bit register for signal <brojac>.
+    Found finite state machine <FSM_1> for signal <trenutno>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 5                                              |
+    | Clock              | tick (rising_edge)                             |
+    | Reset              | rst (negative)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <brojacPodataka[2]_GND_8_o_add_7_OUT> created at line 67.
+    Found 4-bit adder for signal <brojac[3]_GND_8_o_add_10_OUT> created at line 73.
+    Found 2-bit 4-to-1 multiplexer for signal <sljedece> created at line 84.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  15 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <receiver> synthesized.
+
+Synthesizing Unit <brg>.
+    Related source file is "G:\lab1-final\lab1\brg.vhd".
+    Found 8-bit register for signal <counter>.
+    Found 1-bit register for signal <tick_tmp>.
+    Found 8-bit adder for signal <counter[7]_GND_9_o_add_0_OUT> created at line 53.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+Unit <brg> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 3-bit adder                                           : 2
+ 4-bit adder                                           : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 7
+ 1-bit register                                        : 1
+ 3-bit register                                        : 2
+ 4-bit register                                        : 2
+ 8-bit register                                        : 2
+# Multiplexers                                         : 10
+ 1-bit 8-to-1 multiplexer                              : 1
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 6
+ 4-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <brg>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <brg> synthesized (advanced).
+
+Synthesizing (advanced) Unit <receiver>.
+The following registers are absorbed into counter <brojac>: 1 register on signal <brojac>.
+The following registers are absorbed into counter <brojacPodataka>: 1 register on signal <brojacPodataka>.
+Unit <receiver> synthesized (advanced).
+
+Synthesizing (advanced) Unit <transmitter>.
+The following registers are absorbed into counter <brojac>: 1 register on signal <brojac>.
+The following registers are absorbed into counter <brojacPodataka>: 1 register on signal <brojacPodataka>.
+Unit <transmitter> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 5
+ 3-bit up counter                                      : 2
+ 4-bit up counter                                      : 2
+ 8-bit up counter                                      : 1
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+# Multiplexers                                         : 6
+ 1-bit 8-to-1 multiplexer                              : 1
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 4
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <trans/FSM_0> on signal <trenutno[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ s1    | 000
+ s2    | 001
+ s3    | 010
+ s4    | 011
+ s5    | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <rec/FSM_1> on signal <trenutno[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ s1    | 00
+ s2    | 01
+ s3    | 10
+ s4    | 11
+-------------------
+
+Optimizing unit <uart_controller> ...
+
+Optimizing unit <transmitter> ...
+
+Optimizing unit <receiver> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_controller, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 36
+ Flip-Flops                                            : 36
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : uart_controller.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 81
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 7
+#      LUT2                        : 13
+#      LUT3                        : 8
+#      LUT4                        : 6
+#      LUT5                        : 8
+#      LUT6                        : 19
+#      MUXCY                       : 7
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 8
+# FlipFlops/Latches                : 36
+#      FD                          : 9
+#      FDC                         : 13
+#      FDCE                        : 14
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      IBUF                        : 2
+#      OBUF                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45fgg676-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              36  out of  54576     0%  
+ Number of Slice LUTs:                   63  out of  27288     0%  
+    Number used as Logic:                63  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     69
+   Number with an unused Flip Flop:      33  out of     69    47%  
+   Number with an unused LUT:             6  out of     69     8%  
+   Number of fully used LUT-FF pairs:    30  out of     69    43%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                           4
+ Number of bonded IOBs:                   4  out of    358     1%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+baud/tick_tmp                      | BUFG                   | 27    |
+clk                                | BUFGP                  | 9     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.172ns (Maximum Frequency: 239.693MHz)
+   Minimum input arrival time before clock: 4.280ns
+   Maximum output required time after clock: 7.057ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'baud/tick_tmp'
+  Clock period: 4.172ns (frequency: 239.693MHz)
+  Total number of paths / destination ports: 243 / 40
+-------------------------------------------------------------------------
+Delay:               4.172ns (Levels of Logic = 2)
+  Source:            rec/trenutno_FSM_FFd2 (FF)
+  Destination:       trans/brojacPodataka_2 (FF)
+  Source Clock:      baud/tick_tmp rising
+  Destination Clock: baud/tick_tmp rising
+
+  Data Path: rec/trenutno_FSM_FFd2 to trans/brojacPodataka_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             20   0.525   1.394  rec/trenutno_FSM_FFd2 (rec/trenutno_FSM_FFd2)
+     LUT2:I0->O            1   0.250   0.682  rec/trenutno_rx_out1 (rx_done)
+     LUT6:I5->O            3   0.254   0.765  trans/GND_7_o_brojac[3]_OR_6_o (trans/GND_7_o_brojac[3]_OR_6_o)
+     FDCE:CE                   0.302          trans/brojacPodataka_0
+    ----------------------------------------
+    Total                      4.172ns (1.331ns logic, 2.841ns route)
+                                       (31.9% logic, 68.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.972ns (frequency: 251.762MHz)
+  Total number of paths / destination ports: 108 / 9
+-------------------------------------------------------------------------
+Delay:               3.972ns (Levels of Logic = 3)
+  Source:            baud/counter_4 (FF)
+  Destination:       baud/counter_2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: baud/counter_4 to baud/counter_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   0.954  baud/counter_4 (baud/counter_4)
+     LUT3:I0->O            3   0.235   0.766  baud/counter[7]_PWR_9_o_equal_2_o<7>_SW0 (N3)
+     LUT6:I5->O            7   0.254   0.910  baud/Mcount_counter_val1 (baud/Mcount_counter_val)
+     LUT2:I1->O            1   0.254   0.000  baud/counter_2_rstpot (baud/counter_2_rstpot)
+     FD:D                      0.074          baud/counter_2
+    ----------------------------------------
+    Total                      3.972ns (1.342ns logic, 2.630ns route)
+                                       (33.8% logic, 66.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'baud/tick_tmp'
+  Total number of paths / destination ports: 37 / 37
+-------------------------------------------------------------------------
+Offset:              4.280ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       trans/brojacPodataka_2 (FF)
+  Destination Clock: baud/tick_tmp rising
+
+  Data Path: rst to trans/brojacPodataka_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.328   0.803  rst_IBUF (rst_IBUF)
+     INV:I->O             27   0.255   1.435  baud/rst_inv1_INV_0 (baud/rst_inv)
+     FDC:CLR                   0.459          trans/brojac_0
+    ----------------------------------------
+    Total                      4.280ns (2.042ns logic, 2.238ns route)
+                                       (47.7% logic, 52.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              4.079ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       baud/counter_2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to baud/counter_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.328   1.259  rst_IBUF (rst_IBUF)
+     LUT6:I0->O            7   0.254   0.910  baud/Mcount_counter_val1 (baud/Mcount_counter_val)
+     LUT2:I1->O            1   0.254   0.000  baud/counter_2_rstpot (baud/counter_2_rstpot)
+     FD:D                      0.074          baud/counter_2
+    ----------------------------------------
+    Total                      4.079ns (1.910ns logic, 2.169ns route)
+                                       (46.8% logic, 53.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'baud/tick_tmp'
+  Total number of paths / destination ports: 15 / 1
+-------------------------------------------------------------------------
+Offset:              7.057ns (Levels of Logic = 4)
+  Source:            trans/brojacPodataka_1 (FF)
+  Destination:       tx (PAD)
+  Source Clock:      baud/tick_tmp rising
+
+  Data Path: trans/brojacPodataka_1 to tx
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.525   1.365  trans/brojacPodataka_1 (trans/brojacPodataka_1)
+     LUT6:I0->O            1   0.254   0.000  trans/Mmux_brojacPodataka[2]_d_in[7]_Mux_14_o_3 (trans/Mmux_brojacPodataka[2]_d_in[7]_Mux_14_o_3)
+     MUXF7:I1->O           1   0.175   0.910  trans/Mmux_brojacPodataka[2]_d_in[7]_Mux_14_o_2_f7 (trans/brojacPodataka[2]_d_in[7]_Mux_14_o)
+     LUT3:I0->O            1   0.235   0.681  trans/tx1 (tx_OBUF)
+     OBUF:I->O                 2.912          tx_OBUF (tx)
+    ----------------------------------------
+    Total                      7.057ns (4.101ns logic, 2.956ns route)
+                                       (58.1% logic, 41.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock baud/tick_tmp
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+baud/tick_tmp  |    4.172|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.972|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 16.23 secs
+ 
+--> 
+
+Total memory usage is 4523680 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

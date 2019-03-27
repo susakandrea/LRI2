@@ -1,0 +1,4 @@
+work	"brg.vhd"
+work	"receiver.vhd"
+work	"transmitter.vhd"
+work	"uart_controller.vhd"
